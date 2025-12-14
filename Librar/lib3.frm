@@ -220,8 +220,9 @@ Private Sub Text1_LostFocus()
 On Error GoTo errorhandle
 Data1.RecordSource = "select * from mem_mast where mem_code='" + Text1.Text + "'"
 Data1.Refresh
-Do While Not Data1.Recordset.EOF
-c = c + 1
+	c = 0 ' Initialize counter
+	Do While Not Data1.Recordset.EOF
+	c = c + 1
 Data1.Recordset.MoveNext
 Loop
 If c <> 0 Then
@@ -234,7 +235,7 @@ End If
 Exit Sub
 errorhandle:
 MsgBox "Error occurred!Wrong Member Code", vbInformation, "Error"
-End
+	Exit Sub ' Use Exit Sub instead of End to prevent application termination
 End Sub
 
 Private Sub Text4_GotFocus()
