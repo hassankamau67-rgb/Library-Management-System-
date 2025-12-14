@@ -275,10 +275,11 @@ End Sub
 
 Private Sub Command4_Click()
 d = InputBox("Enter the member code to delete the record", "Delete")
-Data3.RecordSource = "select * from issue_mast where mem_code='" + d + "'"
-Data3.Refresh
-Do While Not Data3.Recordset.EOF
-c = c + 1
+	c = 0 ' Initialize counter
+	Data3.RecordSource = "select * from issue_mast where mem_code='" + d + "'"
+	Data3.Refresh
+	Do While Not Data3.Recordset.EOF
+	c = c + 1
 Data3.Recordset.MoveNext
 Loop
 If c <> 0 Then
@@ -312,7 +313,7 @@ Data2.Refresh
 Data2.Recordset.Edit
 s = Data2.Recordset.Fields(4)
 cs = s + qty
-Data1.Recordset.Fields(0) = j
+' Data1.Recordset.Fields(0) = j ' Removed: Variable j is undefined and Data1 is the wrong data control
 Data2.Recordset.Fields(4) = cs
 Data2.Recordset.Update
 Data2.Recordset.Close
@@ -321,10 +322,11 @@ End Sub
 
 Private Sub Command6_Click()
 d = InputBox("Enter the book code to delete the book", "Delete")
-Data3.RecordSource = "select * from issue_mast where book_code='" + d + "'"
-Data3.Refresh
-Do While Not Data3.Recordset.EOF
-c = c + 1
+	c = 0 ' Initialize counter
+	Data3.RecordSource = "select * from issue_mast where book_code='" + d + "'"
+	Data3.Refresh
+	Do While Not Data3.Recordset.EOF
+	c = c + 1
 Data3.Recordset.MoveNext
 Loop
 If c <> 0 Then
