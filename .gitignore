@@ -1,0 +1,25 @@
+# Visual Basic 6.0 Files
+*.vbw
+*.log
+*.exe
+*.obj
+*.exp
+*.lib
+*.res
+*.scc
+*.vbg
+*.vbp
+*.vbr
+*.vbl
+*.vbx
+*.ocx
+*.dll
+*.tlb
+*.olb
+*.mdb
+
+# Temporary/System Files
+Thumbs.db
+.DS_Store
+FOXUSER.DBF
+FOXUSER.FPT
